@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register - Hindustan Scouts & Guides</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .register-container {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .register-container h2 {
+    color: #0984e3;
+    margin-bottom: 20px;
+  }
+
+  .register-container input[type="text"],
+  .register-container input[type="email"],
+  .register-container input[type="password"],
+  .register-container input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+
+  .register-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #0984e3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .register-container button:hover {
+    background: #74b9ff;
+  }
+
+  .success-msg {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background: #2ecc71;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .login-link {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .login-link a {
+    color: #0984e3;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="register-container">
+    <div class="button">
+  <h2>Register</h2>
+  <form id="registerForm">
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <input type="tel" id="phone" placeholder="Phone Number" required>
+    <div style="margin: 10px 0; text-align: left;">
+      <label><input type="radio" name="gender" value="Male" required> Male</label>
+      <label style="margin-left:10px;"><input type="radio" name="gender" value="Female" required> Female</label>
+    </div>
+    <label style="font-size:13px;">
+      <input type="checkbox" id="terms" required> I accept the terms and conditions
+    </label>
+    <button type="submit">Register</button>
+  </form>
+
+  <div class="success-msg" id="successMsg">✅ Registered Successfully!</div>
+
+  <div class="login-link">
+    Already have an account? <a href="index.html">Go Back</a>
+  </div>
+</div>
+</div>
+
+<script>
+  const registerForm = document.getElementById('registerForm');
+  const successMsg = document.getElementById('successMsg');
+
+  registerForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    successMsg.style.display = 'block';
+    registerForm.reset();
+    setTimeout(() => {
+      successMsg.style.display = 'none';
+    }, 3000);
+  });
+</script>
+
+</body>
+</html>
